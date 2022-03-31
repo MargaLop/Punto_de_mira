@@ -1,0 +1,14 @@
+## PUNTO DE MIRA
+Ejercio Pytrhon. Con una lista de coordenadas, hacer su representacion gradica.
+
+## CONDICIONES
+
+1.- Report del ejercicio
+
+2.- El ejercio pueda estraerse como modulo.
+
+3.- Importar libreria grafico.
+
+4.- Imprimir 1 coordenada en el grafico.
+
+5.- Imprimir lista.
