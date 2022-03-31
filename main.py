@@ -5,7 +5,7 @@ arr = [[6,6], [-1,8], [9,1], [6,-5]]
 def coordenadas(lista):
 
     cont = 0
-
+    
     while(cont < len(lista)-1):
         for coord in lista:
             x = lista[cont][0]
@@ -14,6 +14,8 @@ def coordenadas(lista):
 
 
             plt.scatter(x, y)
+            plt.pause(1.00)
+    
     
     plt.legend(lista)
     plt.xlabel("X")
