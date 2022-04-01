@@ -12,3 +12,15 @@ Ejercio Pytrhon. Con una lista de coordenadas, hacer su representacion gradica.
 4.- Imprimir 1 coordenada en el grafico.
 
 5.- Imprimir lista.
+
+## EJERCICIO EXTRA
+
+Ahora con las bases creadas, crear una animación cada coordenada creada aparecera de una en una.
+Tambiuen hay que crear un "punto de mira" en la coordenada '0.0'. Y fijar la grafia con el mayor valor, 
+de forma automatica.
+
+## PUNTO DE MIRA 2.0
+
+Con la introducción de un video visto en clase, crear un patron de un francotirador.
+Creando un nuevo modulo que reproduzca "pattern spray" de un arma. Cada nueva tirada tiene que tener un patrón diferente
+a los anteriores, usando la libreria "random".

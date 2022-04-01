@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-arr = [[6,6], [-1,8], [9,1], [6,-5]]
+arr = [[6,8], [-12,8], [0,1], [32,-5]]
 
 def maximo_abs(lista):
     max_coord =abs(max(max(lista)))
@@ -29,14 +29,12 @@ def coordenadas(lista):
             plt.pause(0.50)
     
     
-    plt.legend(lista)
+    plt.legend(['punto de mira'] + lista)
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.show()
 
 
-
-coordenadas(arr)
 
 
 
