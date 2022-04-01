@@ -13,10 +13,11 @@ coord = [
     [-3,7.1]
     ]
 
+list_hip = []
 
 def hipopotanusa(lista):
     cont = 0
-    list_hip = []
+
     while(cont < len(lista)-1):
 
         for numero in lista:
@@ -25,9 +26,18 @@ def hipopotanusa(lista):
             cont +=1
 
     return list_hip
-
-
-print(hipopotanusa(coord))
+hipopotanusa(coord)
 
 
 
+def azar(lista):
+
+    cont = 0
+    list_azar = []
+    while(cont < len(lista)-1):
+        rand_rango = rd.uniform(list_hip[cont]*-1, list_hip[cont])
+        list_azar.append(rand_rango)
+        cont += 1
+    return  list_azar
+
+print(azar(coord))
