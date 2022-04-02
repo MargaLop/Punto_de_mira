@@ -1,6 +1,7 @@
 import random as rd
 import math
-import main
+import main 
+import matplotlib.pyplot as plt
 
 coord_base = [
     [0,0],
@@ -13,13 +14,14 @@ coord_base = [
     [-3,7.1]
     ]
 
-list_hip = []
-list_azar_x = []
-list_azar_y = []
-list_incr = []
+
+
+
+lista_final =[]
 
 def hipopotanusa(lista):
     cont = 0
+    list_hip = []
 
     while(cont < len(lista)-1):
 
@@ -31,25 +33,45 @@ def hipopotanusa(lista):
     return list_hip
 
 
-def azar(lista,hipotenusa):
-    
+def increment (lista,hipotenusa):
+    list_incr_x = []
+    list_incr_y = []
     cont = 0 
 
-    while(cont < len(lista)-1):
+    while(cont < len(lista)):
         rand_rango = rd.uniform(hipotenusa[cont]*-1, hipotenusa[cont])
         
         inc_x = lista [cont][0] + rand_rango 
         inc_y = lista [cont][1] + rand_rango 
 
-        list_azar_x.append(inc_x)
-        list_azar_y.append(inc_y)
+        list_incr_x.append(inc_x)
+        list_incr_y.append(inc_y)
         cont += 1
     
 
-    return  list_azar_x,list_azar_y
+    return  list_incr_x,list_incr_y
+
+def pattern (lista_x, lista_y):
+
+    lista_resultado =[]
+
+    for i in range(len(lista_x)):
+        lista_coord_nueva = []
+        
+        lista_coord_nueva.append(lista_x[i])
+        lista_coord_nueva.append(lista_y[i])
+        
+        lista_resultado.append( lista_coord_nueva)
+    
+    
+    return main.coordenadas(lista_resultado)
+    
+    
 
 
 
-hipopotanusa(coord_base)
+list_hipp = hipopotanusa(coord_base)
+list_inc_x , list_inc_y = increment(coord_base,list_hipp)
+pattern(list_inc_x , list_inc_y)
 
-print(azar(coord_base,list_hip))
+

@@ -10,7 +10,7 @@ def maximo_abs(lista):
 
 
 def coordenadas(lista):
-    max_coord = maximo_abs(arr)+1
+    max_coord = maximo_abs(lista)+1
     cont = 0
     plt.plot(0,0,'k+')
     
