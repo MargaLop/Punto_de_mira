@@ -29,7 +29,7 @@ def coordenadas(lista):
             plt.pause(0.50)
     
     
-    plt.legend(['punto de mira'] + lista)
+    # plt.legend(['punto de mira'] + lista)
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.show()
