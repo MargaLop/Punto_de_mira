@@ -2,7 +2,7 @@ import random as rd
 import math
 import main
 
-coord = [
+coord_base = [
     [0,0],
     [0.2,0.3],
     [-0.4,0.6], 
@@ -14,6 +14,9 @@ coord = [
     ]
 
 list_hip = []
+list_azar_x = []
+list_azar_y = []
+list_incr = []
 
 def hipopotanusa(lista):
     cont = 0
@@ -26,18 +29,27 @@ def hipopotanusa(lista):
             cont +=1
 
     return list_hip
-hipopotanusa(coord)
 
 
+def azar(lista,hipotenusa):
+    
+    cont = 0 
 
-def azar(lista):
-
-    cont = 0
-    list_azar = []
     while(cont < len(lista)-1):
-        rand_rango = rd.uniform(list_hip[cont]*-1, list_hip[cont])
-        list_azar.append(rand_rango)
-        cont += 1
-    return  list_azar
+        rand_rango = rd.uniform(hipotenusa[cont]*-1, hipotenusa[cont])
+        
+        inc_x = lista [cont][0] + rand_rango 
+        inc_y = lista [cont][1] + rand_rango 
 
-print(azar(coord))
+        list_azar_x.append(inc_x)
+        list_azar_y.append(inc_y)
+        cont += 1
+    
+
+    return  list_azar_x,list_azar_y
+
+
+
+hipopotanusa(coord_base)
+
+print(azar(coord_base,list_hip))

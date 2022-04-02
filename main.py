@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-arr = [[6,8], [-12,8], [0,1], [32,-5]]
+arr = [[6,8], [-12,68], [0,1], [32,-5]]
 
 def maximo_abs(lista):
     max_coord =abs(max(max(lista)))
@@ -40,9 +40,8 @@ def coordenadas(lista):
 
 
 if __name__ == "__main__":
-   print(f'mi nombres es >> {__name__}<<')
+    coordenadas(arr)
+    
 
-else:
-    print (f'Importado como modulo: >>{__name__}<<')
 
      
