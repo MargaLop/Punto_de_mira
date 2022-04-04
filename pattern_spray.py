@@ -1,35 +1,30 @@
 import random as rd
 import math
 import main 
-import matplotlib.pyplot as plt
+
 
 coord_base = [
-    [0,0],
-    [0.2,0.3],
-    [-0.4,0.6], 
-    [-0.5,1.1],
-    [-0.9,2],
-    [-0.2,3.3],
-    [-0.7,6.8],
-    [-3,7.1]
+    [0, 0],
+    [0.2, 0.3],
+    [-0.4, 0.6], 
+    [-0.5, 1.1],
+    [-0.9, 2],
+    [-0.2, 3.3],
+    [-0.7, 6.8],
+    [-3, 7.1]
     ]
-
 
 
 
 lista_final =[]
 
 def hipopotanusa(lista):
-    cont = 0
     list_hip = []
 
-    while(cont < len(lista)-1):
-
-        for numero in lista:
-            hipot = math.sqrt((lista[cont][0]**2)+(lista[cont][1]**2))
-            list_hip.append(hipot)
-            cont +=1
-
+    for pareja in lista:
+        hipot = math.sqrt((pareja[0]**2)+(pareja[1]**2))
+        list_hip.append(hipot)
+        
     return list_hip
 
 
@@ -51,6 +46,7 @@ def increment (lista,hipotenusa):
 
     return  list_incr_x,list_incr_y
 
+
 def pattern (lista_x, lista_y):
 
     lista_resultado =[]
@@ -67,11 +63,6 @@ def pattern (lista_x, lista_y):
     return main.coordenadas(lista_resultado)
     
     
-
-
-
 list_hipp = hipopotanusa(coord_base)
 list_inc_x , list_inc_y = increment(coord_base,list_hipp)
 pattern(list_inc_x , list_inc_y)
-
-
