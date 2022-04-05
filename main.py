@@ -1,47 +1,68 @@
-import matplotlib.pyplot as plt
-
-arr = [[6,8], [-12,68], [0,1], [32,-5]]
-
-def maximo_abs(lista):
-    max_coord =abs(max(max(lista)))
-    min_coord =abs(min(min(lista)))
-
-    return max(max_coord, min_coord)
+import random as rd
+import math
+import grafica_coordenadas
 
 
-def coordenadas(lista):
-    max_coord = maximo_abs(lista)+1
-    cont = 0
-    plt.plot(0,0,'k+')
+coord_base = [
+    [0, 0],
+    [0.2, 0.3],
+    [-0.4, 0.6], 
+    [-0.5, 1.1],
+    [-0.9, 2],
+    [-0.2, 3.3],
+    [-0.7, 6.8],
+    [-3, 7.1]
+    ]
+
+
+
+lista_final =[]
+
+def hipopotanusa(lista):
+    list_hip = []
+
+    for pareja in lista:
+        hipot = math.sqrt((pareja[0]**2)+(pareja[1]**2))
+        list_hip.append(hipot)
+        
+    return list_hip
+
+
+def increment (lista,hipotenusa):
+    list_incr_x = []
+    list_incr_y = []
+    cont = 0 
+
+    while(cont < len(lista)):
+        rand_rango = rd.uniform(hipotenusa[cont]*-1, hipotenusa[cont])
+        
+        inc_x = lista [cont][0] + rand_rango 
+        inc_y = lista [cont][1] + rand_rango 
+
+        list_incr_x.append(inc_x)
+        list_incr_y.append(inc_y)
+        cont += 1
     
-    while(cont < len(lista)-1):
 
-        plt.xlim(-1*max_coord, max_coord)
-        plt.ylim(-1* max_coord, max_coord)
-
-        for coord in lista:
-            x = lista[cont][0]
-            y = lista[cont][1]
-            cont += 1
+    return  list_incr_x,list_incr_y
 
 
-            plt.scatter(x, y)
-            plt.pause(0.50)
+def pattern (lista_x, lista_y):
+
+    lista_resultado =[]
+
+    for i in range(len(lista_x)):
+        lista_coord_nueva = []
+        
+        lista_coord_nueva.append(lista_x[i])
+        lista_coord_nueva.append(lista_y[i])
+        
+        lista_resultado.append( lista_coord_nueva)
     
     
-    # plt.legend(['punto de mira'] + lista)
-    plt.xlabel("X")
-    plt.ylabel("Y")
-    plt.show()
-
-
-
-
-
-
-if __name__ == "__main__":
-    coordenadas(arr)
+    return grafica_coordenadas.coordenadas(lista_resultado)
     
-
-
-     
+    
+list_hipp = hipopotanusa(coord_base)
+list_inc_x , list_inc_y = increment(coord_base,list_hipp)
+pattern(list_inc_x , list_inc_y)
