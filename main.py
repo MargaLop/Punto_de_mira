@@ -1,19 +1,11 @@
+import imp
 import random as rd
 import math
 import grafica_coordenadas
+import json_armas
 
 
-coord_base = [
-    [0, 0],
-    [0.2, 0.3],
-    [-0.4, 0.6], 
-    [-0.5, 1.1],
-    [-0.9, 2],
-    [-0.2, 3.3],
-    [-0.7, 6.8],
-    [-3, 7.1]
-    ]
-
+coord_base = json_armas.arma_escoger("Fusil de asalto")
 
 
 lista_final =[]
