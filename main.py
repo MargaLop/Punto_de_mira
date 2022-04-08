@@ -1,4 +1,3 @@
-import imp
 import random as rd
 import math
 import grafica_coordenadas
